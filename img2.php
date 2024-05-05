@@ -2,4 +2,4 @@
 include_once('functions.php');
 include_once('variables.php');
 
-imgViev($img1);
+imgViev($img2);

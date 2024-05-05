@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wrap {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+.imgWrap {
+    height: 200px;
+    border: solid 3px blue;
+    border-radius: 20px;
+}
+
+.image {
+    width: auto;
+    height: 100%;
+    border-radius: 17px;
+    margin-bottom: 20px;
+}
+
+.imgWrap * {
+    text-align: center;
+}
+
+.wrapMimeType {
+    margin: auto;
+    width: 100px;
+    padding: 10px;
+    margin-top: 10px;
+    border: solid 3px blue;
+    border-radius: 20px;
+}
