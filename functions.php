@@ -1,5 +1,5 @@
 <?php
-function fileSizeVar($file)
+function fileSizeVar(string $file): string
 {
     $size = filesize($file);
     if ($size < 1000) {
@@ -9,16 +9,16 @@ function fileSizeVar($file)
     }
 }
 
-function getMimeType($image)
+function getMimeType(array $image): string
 {
     return "MIME-тип:\n" . $image['mime'];
 }
 
-function createStringImg($fontSize, $string, $font)
+function createStringImg(int $fontSize, string $string, string $font): void
 {
     $lineHeight = $fontSize * 0.2;
     $lines = explode("\n", $string);
-   
+
     foreach ($lines as $line) {
         $arBbox[] = imagettfbbox($fontSize, 0, $font, $line);
     }
@@ -31,9 +31,9 @@ function createStringImg($fontSize, $string, $font)
         }
     }
 
-    $im = imagecreatetruecolor($maxWith, ($fontSize + $lineHeight)*count($lines) + $lineHeight);
+    $im = imagecreatetruecolor($maxWith, ($fontSize + $lineHeight) * count($lines) + $lineHeight);
     imagesavealpha($im, true);
-    imagefill($im, 0, 0, imagecolorallocatealpha($im,0, 0, 0, 127));
+    imagefill($im, 0, 0, imagecolorallocatealpha($im, 0, 0, 0, 127));
     $color = imageColorAllocate($im, 0, 0, 255);
 
     $lineShift = 1;
@@ -43,7 +43,7 @@ function createStringImg($fontSize, $string, $font)
         if ($key == 0) {
             imagettftext($im, $fontSize, 0, $x, $fontSize + $lineHeight, $color, $font, $line);
         } else {
-            $shift = ($fontSize)*$lineShift + $lineHeight*$lineShift;
+            $shift = ($fontSize) * $lineShift + $lineHeight * $lineShift;
             imagettftext($im, $fontSize, 0, $x, $shift, $color, $font, $line);
         }
         ++$lineShift;
@@ -53,7 +53,7 @@ function createStringImg($fontSize, $string, $font)
     imagedestroy($im);
 }
 
-function imgViev($file)
+function imgViev(string $file): void
 {
     $type = getimagesize($file)['mime'];
     $contentType = "Content-type: " . $type;
