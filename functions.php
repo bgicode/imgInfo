@@ -1,11 +1,10 @@
 <?php
-
 function fileSizeVar($file) {
     $size = filesize($file);
     if ($size < 1000) {
         return $size . ' байт';
     } else {
-        return $size/1000 . " КБ";
+        return $size / 1000 . " КБ";
     }
 }
 
@@ -48,7 +47,7 @@ function createStringImg($fontSize, $string, $font)
         }
         ++$lineShift;
     }
-    
+
     imagepng($im);
     imagedestroy($im);
 }
@@ -72,7 +71,4 @@ function imgViev($file)
             imagejpeg($im);
             break;
     }
-    // $im = imageCreateFromGif($file);
-    
 }
-

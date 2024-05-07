@@ -2,10 +2,6 @@
 include_once('functions.php');
 include_once('variables.php');
 
-// $img1 = "img/практика_gif.gif";
-// $img2 = "img/практика_jpg.jpg";
-// $img2 = "img/практика_png.png";
-
 $img1Data = getimagesize($img1);
 $img2Data = getimagesize($img2);
 $img3Data = getimagesize($img3);
@@ -42,6 +38,5 @@ $img3Data = getimagesize($img3);
             <div class="wrapMimeType"><img src="type3.php" alt=""></div>
         </div>
     </div>
-    
 </body>
 </html>
