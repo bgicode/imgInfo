@@ -1,5 +1,6 @@
 <?php
-function fileSizeVar($file) {
+function fileSizeVar($file)
+{
     $size = filesize($file);
     if ($size < 1000) {
         return $size . ' байт';
@@ -53,7 +54,7 @@ function createStringImg($fontSize, $string, $font)
 }
 
 function imgViev($file)
-{   
+{
     $type = getimagesize($file)['mime'];
     $contentType = "Content-type: " . $type;
     header($contentType);
