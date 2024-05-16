@@ -2,16 +2,16 @@
 function fileSizeVar(string $file): string
 {
     $size = filesize($file);
-    if ($size < 1000) {
+    if ($size < 1024) {
         return $size . ' байт';
     } else {
-        return $size / 1000 . " КБ";
+        return round(($size / 1024)) . " КБ";
     }
 }
 
-function getMimeType(array $image): string
+function getMimeType(array $arImage): string
 {
-    return "MIME-тип:\n" . $image['mime'];
+    return "MIME-тип:\n" . $arImage['mime'];
 }
 
 function createStringImg(int $fontSize, string $string, string $font): void
